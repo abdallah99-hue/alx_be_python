@@ -1,21 +1,21 @@
-# main.py
+# main-0.py
 
 import sys
 from bank_account import BankAccount
 
 def main():
-    account = BankAccount(100)  # Initial balance of $100
+    account = BankAccount(100)  # رصيد ابتدائي 100$
 
     if len(sys.argv) < 2:
-        print("Usage: python main.py <command>:<amount>")
+        print("Usage: python main-0.py <command>:<amount>")
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    # Split the command (e.g., deposit:50)
+    # تقسيم الأمر (مثل deposit:50)
     command, *params = sys.argv[1].split(':')
     amount = float(params[0]) if params else None
 
-    # Execute commands
+    # تنفيذ الأوامر
     if command == "deposit" and amount is not None:
         account.deposit(amount)
         print(f"Deposited: ${amount}")
